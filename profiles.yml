@@ -1,0 +1,24 @@
+jaffle_shop: # this needs to match the profile: in your dbt_project.yml file
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: /dbt/keyfile.json # replace this with the full path to your keyfile
+      project: lufeng-cepf # Replace this with your project id
+      dataset: dbt_lf # Replace this with dbt_your_name, e.g. dbt_bob
+      threads: 1
+      timeout_seconds: 300
+      location: US
+      priority: interactive
+
+    prod:
+      type: bigquery
+      method: service-account
+      project: [GCP project id]
+      dataset: [the name of your dbt dataset]
+      threads: [1 or more]
+      keyfile: [/path/to/bigquery/keyfile.json]
+      timeout_seconds: 300
+      priority: interactive
+      retries: 1

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "lufeng-cepf",
+  "private_key_id": "1a734ff174daf2b52c8e1c96a549f25338b3c851",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDLvrJ2BbJPAGO9\nsG8JLxh+x1zFWmUcNWJWavs8gHr2e5TMd0QY0jQSkVOpFfzAf59Y3GW/SoEEeW/j\n3JqtS2tyYCNKRGoi9jcjbasb7nZdA6rOMP1T2GEpo+lDizz5/5fwGgZcjRSexO04\nQ6+wtJkhw6qb8lP8hrMp8s7Qqs7Wqu6WESTi3Dcz7CFHEZrODTpGnrrgaH0XMXQ4\nmX9I+VOcGGOeBu+xmuaHadfUTKi4d9ur13p4pIN44Z2JDYfPXBsV/m34YcXLsLb4\n26wey0sf0n4Bzv+nlaJjC/ZxM+OZ5SHSvtl2p0QJ0NzFCWCFxKi971VPHLyp6fSb\nauvlYLcnAgMBAAECggEAR1vrckWtfVj0FghY410Q1bpqhh6SYi5aWk0O4FJZfsGq\nzHALNCxPG5+1rvdp9lvciglrQ3PLOy9zHlnx/Lb5E26TfZv3lnYouqpa7yX2Y754\nkM38s+SJp0Vm2gbG3QKFiwz6ZGjvK2pqcTXXr2qZZYd71jGp87yTvKHziIcCeZF0\n8JEcfhpT8c1wBeo4fQIdE/Hwci0Xk1spUsE13vFXfBSNb8S+dMDVRPoQD47QJNm1\n93DH78DjjcvpBMjUwYhQVksFvDqaJSaSAfNbu42zVAcJGz6c1a8yPjwuGsOznNeI\nwAxQVT/BR+QGn7YLoOEg9bnauTAa2n9P0Cx+bp+qOQKBgQD5qFmJNUI1L7BSudVZ\nIG8sqBuojCx2/XOrijsA4xVmMDmjCfL8E94DiHSLckNV8IbN8sLeeo+iQquYsk/r\nTxnql19Xi9glVo8XtEd6UtW509sQuG/rhG3Ltx5OR1HjlUTGvZXEP6L3JnU0nPAg\n+fMr0BBnGZYuTyhHREv0XD3tGQKBgQDQ68D0IriYKu4iQxZuqrG1mWSAoubP7lvy\nrEzDwbdPi9Kwq7KsPLK1mCErD+P5sG1bC3+P740ZkkBcGmm++2L/VME0SfLNAsne\nY1FojaMajdCzxqI5bIwnpgpZh7WePrWhC14RAnDOsMPCNoMQXrDC6QKcBbQauY4Y\nv9DwggwOPwKBgFNqLWhLtDBjG624S5F45cxs6rjZBO5I5sH08JvuQ7Md/9P6ugYB\neVeC2zXQWrE3KUNcjkGZf64+Smk9grhjeIxKQV/V6MUo86x+3rb/QEvTfklK5pIx\ncCH1sBmFeNXqhM1GgOjOPlwHrHeEzDKocNg9r41THjug1RtitWITA9nZAoGBAIQz\n2vriCcuIxv35U/WdoCyZL2bTLpl/bMHIVB8/sv7sLNvNGpgxJKkS5lI4kPuMr/Z/\n9S2g2bnHuWBO+oF21DNcb5HmBXXDgPhwArDVh9Oiz+EjHb6WuK3SPRRgcwX7CrYo\n2lKLJ9UzN/zqv88ZDGOaTSNr3IdYydlRcCbxNC3DAoGBAPBhk4x5vvoBGO+JIpxt\nCEblLvLY/HUKHV03LeU/zYjpS4elhJjr206e4YsqCcimRnMTTkRd/bi6oHQNTKhR\nPa38wDXEcW9mPa9BI3Ma1+SWZcvmWBljJdPnqiM7eFOrUcz2E/dg5xmTpKETKddU\n6vjUL43JBhsjsejvrUPtH0UL\n-----END PRIVATE KEY-----\n",
+  "client_email": "dbt-user@lufeng-cepf.iam.gserviceaccount.com",
+  "client_id": "108501446097938523846",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dbt-user%40lufeng-cepf.iam.gserviceaccount.com"
+}
