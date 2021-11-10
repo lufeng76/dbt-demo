@@ -22,5 +22,7 @@ steps:
   id: Test
   args:
   - 'run'
-  - '--project-dir'
-  - '/dbt'    
+  - 'dev'
+  - 'jaffle_shop'
+  - '{}'
+  - 'False'   
