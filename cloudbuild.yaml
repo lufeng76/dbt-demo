@@ -20,9 +20,7 @@ steps:
 # This step run the integration test
 - name: 'gcr.io/$PROJECT_ID/dbt-demo:$SHORT_SHA'
   id: Test
+  entrypoint: '/bin/bash'
   args:
-  - 'run'
-  - 'dev'
-  - 'jaffle_shop'
-  - '{}'
-  - 'False'   
+  - '-c'
+  - '/dbt/dbt_run.sh run dev jaffle_shop {} false'
