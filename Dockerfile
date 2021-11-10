@@ -7,4 +7,4 @@ COPY demo /dbt
 #RUN chown -R dbt_user /dbt
 #USER dbt_user
 WORKDIR /dbt
-ENTRYPOINT []
+#ENTRYPOINT []
