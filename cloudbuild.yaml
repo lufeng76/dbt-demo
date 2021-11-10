@@ -1,0 +1,10 @@
+steps:
+# This step build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  id: Build
+  args:
+  - 'build'
+  - '-t'
+  - 'gcr.io/$PROJECT_ID/dbt-demo:$SHORT_SHA'
+  - '.'
+
