@@ -19,6 +19,6 @@ jaffle_shop: # this needs to match the profile: in your dbt_project.yml file
       dataset: [the name of your dbt dataset]
       threads: [1 or more]
       keyfile: [/path/to/bigquery/keyfile.json]
-      timeout_seconds: 300
+      timeout_seconds: 400
       priority: interactive
       retries: 1
