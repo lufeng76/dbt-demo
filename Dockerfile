@@ -8,10 +8,7 @@ COPY demo /dbt
 #USER root
 #RUN chown -R dbt_user /dbt
 #USER dbt_user
+
 RUN chmod +x /dbt/dbt_run.sh
 WORKDIR /dbt
-<<<<<<< HEAD
-ENTRYPOINT [/dbt/dbt_run.sh]
-=======
 ENTRYPOINT []
->>>>>>> 61973d6 (change cloudbuild)
