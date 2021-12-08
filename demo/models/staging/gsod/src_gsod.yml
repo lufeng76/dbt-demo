@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: gsod
+    description: The public weather data
+    database: bigquery-public-data
+    schema: noaa_gsod
+
+    tables:
+      - name: gsod2021

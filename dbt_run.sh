@@ -29,7 +29,13 @@ elif [ $mode = "debug" ]; then
 elif [ $mode = "debug" ]; then
     echo "dbt Mode is debug"
     dbt debug --profiles-dir=/app/profiles_dir --target="$dbt_target"
+<<<<<<< HEAD
 >>>>>>> 61973d6 (change cloudbuild)
+=======
+elif [ $mode = "deps" ]; then
+    echo "dbt Mode is debug"
+    dbt deps
+>>>>>>> 437a8ad (hkt demo)
 elif [ $mode = "local" ]; then
     echo "dbt local run"
     dbt run --target="$dbt_target" --select="$dbt_models" --vars="$dbt_vars" --project-dir=/Users/lufengsh/Documents/GitHub/dbt-demo/demo
