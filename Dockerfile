@@ -11,4 +11,5 @@ COPY demo /dbt
 
 RUN chmod +x /dbt/dbt_run.sh
 WORKDIR /dbt
+RUN /dbt/dbt_run.sh deps
 ENTRYPOINT []

@@ -30,7 +30,7 @@ with models.DAG(
         image_pull_policy='Always',
         # Artifact image of dbt repo
         image='gcr.io/lufeng-cepf/dbt-demo:ef6854d',
-        cmds=["/bin/bash", "-c","/dbt/dbt_run.sh run dev jaffle_shop {} false"],
+        cmds=["/bin/bash", "-c","/dbt/dbt_run.sh deps;/dbt/dbt_run.sh run dev jaffle_shop {} false"],
         affinity={
             'nodeAffinity': {
                 # requiredDuringSchedulingIgnoredDuringExecution means in order

@@ -23,4 +23,4 @@ steps:
   entrypoint: '/bin/bash'
   args:
   - '-c'
-  - '/dbt/dbt_run.sh deps;/dbt/dbt_run.sh test'
+  - '/dbt/dbt_run.sh test'
