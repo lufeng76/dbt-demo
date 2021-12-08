@@ -22,6 +22,9 @@ elif [ $mode = "debug" ]; then
 elif [ $mode = "deps" ]; then
     echo "dbt Mode is dept"
     dbt deps
+elif [ $mode = "test" ]; then
+    echo "dbt Mode is test"
+    dbt test    
 elif [ $mode = "local" ]; then
     echo "dbt local run"
     dbt run --target="$dbt_target" --select="$dbt_models" --vars="$dbt_vars" --project-dir=/Users/lufengsh/Documents/GitHub/dbt-demo/demo
