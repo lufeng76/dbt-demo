@@ -8,6 +8,7 @@ sources:
 
     tables:
       - name: customers
+        description: customer information
         columns:
           - name: id
             tests:

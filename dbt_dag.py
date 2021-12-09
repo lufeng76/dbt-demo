@@ -29,8 +29,8 @@ with models.DAG(
         # Ensures that cache is always refreshed
         image_pull_policy='Always',
         # Artifact image of dbt repo
-        image='gcr.io/lufeng-cepf/dbt-demo:ef6854d',
-        cmds=["/bin/bash", "-c","/dbt/dbt_run.sh deps;/dbt/dbt_run.sh run dev jaffle_shop {} false"],
+        image='gcr.io/lufeng-cepf/dbt-demo:97f115c',
+        cmds=["/bin/bash", "-c","/dbt/dbt_run.sh run dev jaffle_shop {} false"],
         affinity={
             'nodeAffinity': {
                 # requiredDuringSchedulingIgnoredDuringExecution means in order
