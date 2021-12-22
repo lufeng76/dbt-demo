@@ -29,7 +29,7 @@ with models.DAG(
         # Ensures that cache is always refreshed
         image_pull_policy='Always',
         # Artifact image of dbt repo
-        image='gcr.io/lufeng-cepf/dbt-demo:97f115c',
+        image='gcr.io/lufeng-cepf/dbt-demo:4aabab2',
         cmds=["/bin/bash", "-c","/dbt/dbt_run.sh run dev jaffle_shop {} false"],
         affinity={
             'nodeAffinity': {

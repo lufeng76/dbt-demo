@@ -24,3 +24,5 @@ steps:
   args:
   - '-c'
   - '/dbt/dbt_run.sh test'
+
+  
