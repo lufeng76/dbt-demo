@@ -12,10 +12,10 @@ profile: 'jaffle_shop'
 # These configurations specify where dbt should look for different types of files.
 # The `source-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
-source-paths: ["models"]
+model-paths: ["models"]
 analysis-paths: ["analysis"]
 test-paths: ["tests"]
-data-paths: ["data"]
+seed-paths: ["data"]
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
@@ -34,10 +34,20 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   jaffle_shop:
     staging:
+   # +database: project_name
      +schema: staging
      +materialized: view
      +tags: ["staging"]
     marts:
-     +schema: marks
+     +schema: marts
      +materialized: table
      +tags: ["marts"]
+
+
+seeds:
+  jaffle_shop:
+    +schema: seed_data
+
+snapshots:
+  jaffle_shop:
+    +target_schema: snapshot_data
