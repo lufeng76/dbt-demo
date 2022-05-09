@@ -1,2 +1,6 @@
-this is a test
-add line
+git remote -v
+
+git add --all
+git status
+git commit -m "demo"
+git push google

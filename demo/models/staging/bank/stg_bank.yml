@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: stg_bank_account
+    description: ""
+    columns:
+      - name: id
+        description: ""
+
+      - name: first_name
+        description: ""
+
+      - name: last_name
+        description: ""
+
+
+models:
+  - name: stg_bank_base_card
+    description: ""
+    columns:
+      - name: id
+        description: ""
+
+      - name: user_id
+        description: ""
+
+      - name: order_date
+        description: ""
+
+      - name: status
+        description: ""
+
+      - name: _etl_loaded_at
+        description: ""

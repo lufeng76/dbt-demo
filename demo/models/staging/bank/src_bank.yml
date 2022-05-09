@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: bank
+    loader: gcloud storage
+    tables:
+      - name: ext_account
+        description: ""
+        external:
+          location: 'gs://williamtsoi-bigquery-bank-demo/data/account'
+          options:
+            format: csv
+            skip_leading_rows: 1
+      - name: ext_base_card
+        description: ""
+        external:
+          location: 'gs://williamtsoi-bigquery-bank-demo/data/base_card'
+          options:
+            format: csv
+            skip_leading_rows: 1
