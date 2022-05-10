@@ -1,8 +1,8 @@
 import datetime
 
 from airflow import models
-from airflow.contrib.kubernetes import secret
-from airflow.contrib.operators import kubernetes_pod_operator
+from airflow.kubernetes.secret import Secret
+from airflow.providers.cncf.kubernetes.operators.kubernetes_pod import KubernetesPodOperator
 from airflow.operators import bash_operator
 
 import os
@@ -21,7 +21,7 @@ with models.DAG(
         dag=dag
     )
 
-    dbt_task = kubernetes_pod_operator.KubernetesPodOperator(
+    dbt_task = KubernetesPodOperator(
         task_id="dbt-task",
         name="dbt-task",
         namespace="default",
@@ -29,36 +29,38 @@ with models.DAG(
         # Ensures that cache is always refreshed
         image_pull_policy='Always',
         # Artifact image of dbt repo
-        image='gcr.io/lufeng-cepf/dbt-demo:4aabab2',
+        image='gcr.io/lufeng-cepf/dbt-demo:ff502d9',
         cmds=["/bin/bash", "-c","/dbt/dbt_run.sh run dev jaffle_shop {} false"],
-        affinity={
-            'nodeAffinity': {
-                # requiredDuringSchedulingIgnoredDuringExecution means in order
-                # for a pod to be scheduled on a node, the node must have the
-                # specified labels. However, if labels on a node change at
-                # runtime such that the affinity rules on a pod are no longer
-                # met, the pod will still continue to run on the node.
-                'requiredDuringSchedulingIgnoredDuringExecution': {
-                    'nodeSelectorTerms': [{
-                        'matchExpressions': [{
-                            # When nodepools are created in Google Kubernetes
-                            # Engine, the nodes inside of that nodepool are
-                            # automatically assigned the label
-                            # 'cloud.google.com/gke-nodepool' with the value of
-                            # the nodepool's name.
-                            'key': 'cloud.google.com/gke-nodepool',
-                            'operator': 'In',
-                            # The label key's value that pods can be scheduled
-                            # on.
-                            # In this case it will execute the command on the node
-                            # pool created by the Airflow bash operator.
-                            'values': [
-                                'pool-1'
-                            ]
-                        }]
-                    }]
-                }
-            }
-        })
+        affinity={}         
+        # affinity={
+        #     'nodeAffinity': {
+        #         # requiredDuringSchedulingIgnoredDuringExecution means in order
+        #         # for a pod to be scheduled on a node, the node must have the
+        #         # specified labels. However, if labels on a node change at
+        #         # runtime such that the affinity rules on a pod are no longer
+        #         # met, the pod will still continue to run on the node.
+        #         'requiredDuringSchedulingIgnoredDuringExecution': {
+        #             'nodeSelectorTerms': [{
+        #                 'matchExpressions': [{
+        #                     # When nodepools are created in Google Kubernetes
+        #                     # Engine, the nodes inside of that nodepool are
+        #                     # automatically assigned the label
+        #                     # 'cloud.google.com/gke-nodepool' with the value of
+        #                     # the nodepool's name.
+        #                     'key': 'cloud.google.com/gke-nodepool',
+        #                     'operator': 'In',
+        #                     # The label key's value that pods can be scheduled
+        #                     # on.
+        #                     # In this case it will execute the command on the node
+        #                     # pool created by the Airflow bash operator.
+        #                     'values': [
+        #                         'pool-1'
+        #                     ]
+        #                 }]
+        #             }]
+        #         }
+        #     }
+        # } 
+        )
 
     bash_task >> dbt_task
