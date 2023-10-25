@@ -22,3 +22,31 @@ As shown in the architecture diagram, dbt is responsible for developing and runn
 * Google Source Repository (GSR) -   Provides Git version control to support collaborative development of any application or service; basically "Git server hosted in the cloud"
 * Google Cloud Build (GCB) - Allow users to create fast, consistent, reliable builds across all languages. Automatically build containers or *non-container artifacts on commits to your Git repository.
 * Artifact Registry (AR) - Evolution of Container Registry, single place for container images and language packages (such as Maven and npm)
+
+
+## Environment variables
+
+Change these varaibles in your environment
+
+```bash
+export PROJECT=lufeng-demo
+export SUBNET=default
+export DBT_VM=dbt
+export DBT_DATASET=dbt
+export LOCATION=US
+```
+
+## Deploy cbt cli
+We need to deploy the dbt client and configure it to connect to BigQuery
+
+### 1. Create a VM 
+```
+gcloud compute instances create ${DBT_VM} \
+  --project ${PROJECT} \
+  --zone us-central1-a \
+  --machine-type n1-standard-2 \
+  --subnet ${SUBNET} \
+  --scopes https://www.googleapis.com/auth/cloud-platform
+```
+
+### 2. install the dbt CLI
